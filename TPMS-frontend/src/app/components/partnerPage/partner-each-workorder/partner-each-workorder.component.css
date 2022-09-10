@@ -1,0 +1,22 @@
+  .card{
+    margin-top: 3%;
+    margin-right: 2%;
+    height: max-content;
+  }
+  .bg-apv{
+    background-color: #1c96aa;
+  }
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+  .navigation{
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 2%;
+  }
+  .invoice{
+    text-align: center;
+    margin-top: 15%;
+  }
+  

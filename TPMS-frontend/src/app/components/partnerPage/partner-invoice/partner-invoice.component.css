@@ -1,0 +1,21 @@
+.margin{
+    margin-top: -5%;
+  }
+  .card{
+    margin-top: 3%;
+    margin-right: 2%;
+    height: max-content;
+  }
+  .bg-apv{
+    background-color: #1c96aa;
+  }
+  .margin{
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .navigation{
+    text-align: center;
+  }
+  button{
+    margin-right: 1%;
+  }

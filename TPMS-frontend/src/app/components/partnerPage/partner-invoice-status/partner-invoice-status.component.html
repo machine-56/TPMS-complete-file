@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg bg-navbgm">
+    <div class="container-fluid">
+      <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link">
+              <i class="fa-solid fa-user pt-1 pr-1"></i>
+                {{role}}
+            </a>
+        </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <!-- invoices list -->
+    <div class="row mt-4">
+      <div class="card col-11 m-auto">
+        <div class="card-header text-white d-flex align-content-center" style="margin-top: -13px;" id="bg-navback">
+          <h3 class="fs-4 mb-0">Invoice Status</h3>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Work Order ID</th>
+                <th scope="col">Invoice No</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let invoice of invoices"
+              >
+                <td data-label="Order ID">{{ invoice.woid }}</td>
+                <td data-label="Invoice No">{{ invoice.invono }}</td>
+                <td data-label="Status">
+                  <span *ngIf="invoice.invoice_status=='Pending'" class="fw-bold">Pending</span>
+                  <span *ngIf="invoice.invoice_status=='apvd'" class="text-success fw-bold">Approved</span>
+                  <span *ngIf="invoice.invoice_status=='denied'" class="text-danger fw-bold">Denied</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

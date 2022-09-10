@@ -1,0 +1,31 @@
+.demo-inline-calendar-card {
+  width: 300px;
+}
+.icon {
+  -webkit-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+  position: absolute;
+  top:4rem;
+  right: 25px;
+  z-index: 0;
+  font-size: 90px;
+  color: rgba(0,0,0,0.15);
+}
+#insta{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  font-size: 200px;
+  
+}
+#gmail{
+  background: linear-gradient(to right, #0000ff, #0e00cb, #ea0096, #fe0068, #ff0045, #ec1a13, #ff1a13, #ec6313, #eb9400, #cebb00, #00ff00, #009200);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  font-size: 200px;
+}

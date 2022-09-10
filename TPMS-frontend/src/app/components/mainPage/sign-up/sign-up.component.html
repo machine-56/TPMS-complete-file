@@ -1,0 +1,179 @@
+<section style="min-height: 100vh; height: min-content; background-color: #204a5f;">
+  <div class="container py-3 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-xl-12">
+              <div class="card" style="border-radius: 1rem;">
+                  <div class="row g-0">
+                      <div class="col-md-4 col-lg-3 pr-0 d-none d-md-block">
+                          <img src="/assets/images/signin.jpg"
+                              alt="login form" class="img-fluid" style=" height: 100%; border-radius: 1rem 0 0 1rem;" />
+                      </div>
+                      <div class="col-md-8 col-lg-9 pl-0 d-flex align-items-center">
+                          <div class="card-body p-5 p-lg-5 text-black">
+                              <form #signupform="ngForm" (ngSubmit)="onSignup()">
+                                  <div class="d-flex align-items-center mb-3 pb-1">
+                                      <img src="../../../../assets/images/logo.svg" width="300px">
+                                  </div>
+                                  <h4 class="fw-bold mb-1 pb-2" style="letter-spacing: 1px;">Create a new account</h4>
+                                  <div class="row">
+                                    <div class="col-12">
+                                      <div class="form-group">
+                                          <label class="form-label" for="name">Full Name</label>
+                                          <input
+                                              type="text"
+                                              class="form-control"
+                                              placeholder="Enter your name"
+                                              id="fullname"
+                                              name="fullname"
+                                              [(ngModel)]="signupData.fullname"
+                                              #fullnameField="ngModel"
+                                              [class.is-invalid]="fullnameField.invalid && fullnameField.touched"
+                                              pattern="[a-zA-z\ ]+$"
+                                              minlength="3"
+                                              maxlength="30"
+                                              required
+                                           />
+                                           <small for="fullname" id="fullnamefeedback" class="text-danger" [class.invisible]="fullnameField.valid || fullnameField.untouched">
+                                              *no number and symbol allowed. Limit (3-30).
+                                            </small>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label class="form-label" for="uname">User Name</label>
+                                          <input
+                                              type="text"
+                                              class="form-control"
+                                              placeholder="Enter your username"
+                                              id="uname"
+                                              name="uname"
+                                              [(ngModel)]="signupData.uname"
+                                              #usernameField="ngModel"
+                                              [class.is-invalid]="usernameField.invalid && usernameField.touched"
+                                              pattern="^[A-Za-z0-9]*$"
+                                              minlength="5"
+                                              maxlength="10"
+                                              required
+                                            />
+                                            <small for="uname" id="unamefeedback" class="text-danger" [class.invisible]="usernameField.valid || usernameField.untouched">
+                                              *only alphabets and numbers are allowed. Limit (5-10)
+                                            </small>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="form-label" for="email">Email address</label>
+                                          <input
+                                              type="text"
+                                              class="form-control"
+                                              placeholder="Enter your email"
+                                              id="email"
+                                              name="email"
+                                              [(ngModel)]="signupData.email"
+                                              #emailField="ngModel"
+                                              [class.is-invalid]="emailField.invalid && emailField.touched"
+                                              pattern="^([\w\.\-]+)@([\w\-]+).([a-z]{2,3})(.[a-z]{2})*$"
+                                              required
+                                            />
+                                          <small for="email" id="emailfeedback" class="text-danger" [class.invisible]="emailField.valid || emailField.untouched" >
+                                            *Enter valid e-mail id.
+                                          </small>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="form-label" for="form2Example17">Company Name</label>
+                                          <input
+                                              type="text"
+                                              class="form-control"
+                                              placeholder="Enter your company name"
+                                              id="compname"
+                                              name="compname"
+                                              [(ngModel)]="signupData.compname"
+                                              #compnameField="ngModel"
+                                              [class.is-invalid]="compnameField.invalid && compnameField.touched"
+                                              required
+                                           />
+                                          <small for="compname" id="compnamefeedback" class="text-danger" [class.invisible]="   compnameField.valid || compnameField.untouched">
+                                            *company name required.
+                                          </small>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label class="form-label" for="form2Example17">Password</label>
+                                          <input
+                                              type="password"
+                                              class="form-control"
+                                              placeholder="Enter your password"
+                                              id="pwd"
+                                              name="pwd"
+                                              [(ngModel)]="signupData.pwd"
+                                              #passwordField="ngModel"
+                                              [class.is-invalid]="passwordField.invalid && passwordField.touched"
+                                              pattern="^(?=.{6,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$"
+                                              minlength="6"
+                                              maxlength="15"
+                                              required
+                                           />
+                                          <small for="pwd" id="pwdfeedback" class="text-danger" [class.invisible]="   passwordField.valid || passwordField.untouched">
+                                            minimum 6 character,atleast 1 uppercase ,1 lowercase, 1 number.
+                                          </small>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="form-label" for="form2Example17">Position</label>
+                                          <select
+                                            class="form-control"
+                                            id="position"
+                                            name="position"
+                                            required
+                                            [(ngModel)]="signupData.post"
+                                            #posts="ngModel">
+                                            <option value="">- select -</option>
+                                            <option *ngFor="let post of positions" [value]="post">
+                                              {{ post }}
+                                            </option>
+                                          </select>
+                                          <small for="position" id="positionfeedback" class="text-danger" [class.invisible]="posts.valid || posts.untouched">
+                                            *Please select a position
+                                          </small
+                                        >
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="form-label" for="form2Example17">Phone No</label>
+                                          <input
+                                              type="text"
+                                              class="form-control"
+                                              placeholder="xxxxxxxxxx"
+                                              id="phoneNo"
+                                              name="phoneNo"
+                                              [(ngModel)]="signupData.phoneNo"
+                                              #phoneField="ngModel"
+                                              [class.is-invalid]="phoneField.invalid && phoneField.touched"
+                                              pattern="^([0-9]{10})$"
+                                              maxlength="10"
+                                              required
+                                           />
+                                          <small for="phoneNo" id="phonefeedback" class="text-danger" [class.invisible]="phoneField.valid || phoneField.untouched">
+                                            Please enter a valid 10 digit number
+                                          </small>
+                                      </div>
+                                    </div>
+                                    <div class="pt-1 mb-2">
+                                        <button
+                                          type="submit"
+                                          [disabled]="signupform.form.invalid"
+                                          id="btn-clr"
+                                          name="signup"
+                                          class="btn btn-lg btn-block text-white">
+                                         Register
+                                        </button>
+                                    </div>
+                                    <p class="mt-1 pb-lg-1" style="color: #393f81;">Already have an account? 
+                                      <a routerLink="/" style="color: #393f81;">Login here</a></p>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

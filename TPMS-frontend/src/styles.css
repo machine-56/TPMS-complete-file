@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body { height: 100%; }
+  body {
+    padding-bottom: 56px;
+    position: relative;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  #bg-navback{
+    background-color: #263238;
+    background-image: linear-gradient(to right, #263238 , #add8e6);
+  }
+  .bg-navbgm{
+      background-color: #add8e6;
+  }
+  #btn-clr{
+    background-color: #204a5f;
+  }
+  #dashcard_1{
+    border-radius: 1.25rem;
+    border: 0;
+    background-image:  linear-gradient(212.43deg, #886CC0 19.43%, #AA6CC0 87.63%);
+  }
+  #dashcard_2{
+    border-radius: 1.25rem;
+    border: 0;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  }
+  #dashcard_3{
+    border-radius: 1.25rem;
+    border: 0;
+    background-image: linear-gradient(to right bottom, #263238, #455760, #66808a, #89abb7, #add8e6);
+  }
+  #dashcard_4{
+    border-radius: 1.25rem;
+    border: 0;
+    background-image: linear-gradient(to right top, #263238, #455760, #66808a, #89abb7, #add8e6);
+  }
+  #dashcard_border_1{
+    border-radius: 1.25rem;
+    background-image: linear-gradient(to right top, #090537, #003c73, #0073a8, #00aed0, #12ebeb);
+  }
+  #dashcard_border_2{
+    border-radius: 1.25rem;
+    background-image: linear-gradient(to right top, #030111, #25364b, #326c89, #37aac1, #56ebeb);
+  }
+  #dashcard_border_3{
+    border-radius: 1.25rem;
+    background-image: linear-gradient(to right top, #030111, #1e2633, #324855, #496d76, #679494);
+  }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

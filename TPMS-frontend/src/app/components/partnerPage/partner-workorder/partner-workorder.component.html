@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg bg-navbgm">
+  <div class="container-fluid">
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-mdb-toggle="collapse"
+    data-mdb-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fa-solid fa-user pt-1 pr-1"></i>
+              {{user}}
+          </a>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row mt-5">
+    <h2 class="text-white p-2 pl-4" style="border-radius: 5px;" id="bg-navback">Workorder</h2>
+  </div>
+</div>
+<div class="container">
+    <div class="row my-5">
+      <div *ngFor="let wo of workOrders" class="col-sm-4">
+        <div *ngIf="wo.woid!=''" (click)="detailedView(wo.woid)" class="card mb-3">
+          <div class="card-body">
+            <h1 class="card-title">{{wo.woid}}</h1>
+            <p class="card-text"><b>Program Name:</b> {{wo.program_name}}</p>
+            <p class="card-text"><b>Traning Date:</b> {{wo.date_start | date:'mediumDate'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

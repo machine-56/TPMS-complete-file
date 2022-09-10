@@ -1,0 +1,147 @@
+<nav class="navbar navbar-expand-lg bg-navbgm">
+  <div class="container-fluid">
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-mdb-toggle="collapse"
+    data-mdb-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fa-solid fa-user pt-1 pr-1"></i>
+              {{user}}
+          </a>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <!-- button -->
+<div class="row mt-2">
+  <div class="navigation">
+    <button (click)="generatePDF()" class="btn text-white" id="btn-clr"><i class="fa fa-download"></i> Download</button>
+    <button class="btn btn-info ml-2" (click)="submitinvoice(workorders.woid)">Submit Inovice</button>
+  </div>
+</div>
+</div>
+<!-- work order -->
+<div id="workorder" #workorder>
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-10 m-auto card p-5">
+        
+        <div class="card-body">
+          <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-9 col-8">
+              <p class="fw-bold fs-6" style="color:#f19101">INFORMATION AND COMMUNICATION TECHNOLOGY ACADEMY OF KERALA</p>
+              <p>Reg. Office : L-9, Thejaswini, Technopark Campus, Thiruvananthapuram, Kerala,India,Pin:695 581
+                CIN : U80302KL2013NPL035441,Ph: 0471 2700811, Fax: 2700812,Email: info@ictkerala.org</p></div>
+            <div class="col-md-3 col-4">
+              <img src="{{ logo }}" alt="ICTAK" width="100" height="100" />
+            </div>
+          </div>
+          <div class="pt-5 row ">
+            <div class="col-8 fs-6 align-self-center d-flex">
+              WORK ORDER NO: {{ workorders.woid }}<br />
+              GSTIN:
+            </div>
+            <div class="col-4 align-self-center d-flex">
+              <span class="text-dark fs-6">
+               {{ workorders.issue_date | date: "mediumDate" }}
+              </span>
+            </div>
+          </div>
+          <div class="row my-4">
+            <div class="col-12 fs-6">
+              To,<br/><br/>
+
+              Partner Name: {{ workorders.partner_name }}<br />
+              Pan Number: {{ workorders.panNo }}<br />
+              <span *ngIf="workorders.GSTno"
+                >GST No: {{ workorders.GSTno }}</span
+              ><br>
+              Training Date: {{ workorders.date_start | date: "mediumDate" }} -
+              {{ workorders.date_end | date: "mediumDate" }}
+              <br />
+            </div>
+            <div class="col-12 fs-6 pt-2">
+              <p><b>Sub: {{ workorders.program_name }}</b></p> 
+              <p class="lh-lg">Dear Sir,<br/><br/>
+                With reference to the above subject and the discussions that we had with your good self, we 
+                are pleased to release our work order No {{workorders.woid}} for Training under the 
+                following terms and conditions:
+                </p>
+            </div>
+            </div>
+          
+          <div class="row my-4">
+            <div class="col-11 m-auto">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr class="fs-6">
+                    <th style="width:auto">SlNo</th>
+                    <th style="width:50%">Description</th>
+                    <th style="width:auto">Qty
+                      (Nos)</th>
+                    <th style="width:auto">Rate</th>
+                    <th style="width:20%">Amount(Rs)</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td style="width:50%">
+                      Training topics:
+                      {{ workorders.traning_topics }}<br/>
+                      Training mode: {{ workorders.mode }}<br/>
+                      {{ workorders.payterms }}
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ workorders.amount }}</td>
+                  </tr>
+                  
+                  <tr>
+                    <td></td>
+                    <td class="text-right">Total:</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ workorders.amount }}</td>
+                  </tr>
+                  <tr>
+                    <td>Amount</td>
+                    <td>{{amountinwords|uppercase}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-3">
+          <p class="text-decoration-underline fs-6">Terms and Conditions</p>
+          <ol style="list-style-position:inside">
+            <li>Payment within 30 days from the date of invoice</li>
+            <li> Training dates {{ workorders.date_start | date: "mediumDate" }} -
+              {{ workorders.date_end | date: "mediumDate" }}</li>
+            <li> inclusive if all taxes</li>
+          </ol>
+          <p>Thanking you,</p>
+          <p>Yours truly</p>
+          <p>For Information and Communication Technology Academy of Kerala</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

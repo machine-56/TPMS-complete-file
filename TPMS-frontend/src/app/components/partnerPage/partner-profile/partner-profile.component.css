@@ -1,0 +1,12 @@
+.box {
+  position: relative;
+}
+label {
+  min-width: 150px;
+}
+@media (max-width: 730px) {
+  label {
+    /* max-width: 100px; */
+    min-width: 10px;
+  }
+}

@@ -1,0 +1,18 @@
+.margin{
+  margin-top: 2%;
+}
+button{
+    margin-top: 25%;
+    margin-right: 3%;
+}
+.comment{
+    margin-top: 2%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.invo{
+    width: 100%;
+    height: 75vh;
+}

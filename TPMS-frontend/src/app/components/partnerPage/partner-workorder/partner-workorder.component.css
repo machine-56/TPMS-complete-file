@@ -1,0 +1,10 @@
+
+  .card{
+    height: max-content;
+    cursor: pointer;
+    border: 1px solid #add8e6;
+    background-color: #add8e675;
+  }
+  .bg-apv{
+    background-color: #1c96aa;
+  }

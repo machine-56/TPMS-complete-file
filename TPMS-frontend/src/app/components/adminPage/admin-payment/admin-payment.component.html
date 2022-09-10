@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-navbgm">
+  <div class="container-fluid">
+    <button
+    class="navbar-toggler"
+    type="button"
+    data-mdb-toggle="collapse"
+    data-mdb-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fa-solid fa-user pt-1 pr-1"></i>
+              {{role}}
+          </a>
+      </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row mt-5">
+    <h2 class="text-white p-2 pl-4" style="border-radius: 5px;" id="bg-navback">Payment Status</h2>
+  </div>
+</div>
+<div class="container">
+  <div class="row my-5">
+    <div class="col-12 col-md-4 mb-4" *ngFor="let payment of payments">
+        <div class="card">
+          <div class="card-body">
+            <p><b>Partner Name: </b>{{ payment.partner_name }}</p>
+            <p><b>Workorder ID: </b>{{ payment.woid }}</p>
+            <p><b>Invoice No: </b>{{ payment.invono }}</p>
+            <p><b>Payment Status: </b>{{ payment.paystatus }}</p>
+            <p><b>Due Date: </b>{{ payment.duedate | date: "mediumDate" }}</p>
+            <p *ngIf="payment.comment && (payment.paystatus=='Overdue')"><b>Comments: </b>{{ payment.comment }}</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
